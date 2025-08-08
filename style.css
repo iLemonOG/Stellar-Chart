@@ -1,0 +1,41 @@
+:root {
+  --bg: #0b0e13;
+  --text: #eaeaea;
+  --accent1: #4db6ac;
+  --accent2: #ffca28;
+  --accent3: #ef5350;
+  --accent4: #42a5f5;
+  --accent5: #ab47bc;
+  --accent6: #66bb6a;
+}
+
+body.light {
+  --bg: #f9f9f9;
+  --text: #222;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: sans-serif;
+  margin: 0;
+}
+
+header {
+  padding: 1rem;
+  text-align: center;
+}
+
+.controls {
+  margin-top: 0.5rem;
+}
+
+select, button {
+  margin: 0.25rem;
+  padding: 0.5rem;
+}
+
+canvas {
+  max-width: 100%;
+  height: auto;
+}
