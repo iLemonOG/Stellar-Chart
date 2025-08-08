@@ -1,6 +1,22 @@
 const ctx = document.getElementById('eventChart').getContext('2d');
 let isLog = false;
 
+function loadTheme() {
+  try {
+    return localStorage.getItem('theme');
+  } catch {
+    return null;
+  }
+}
+
+function saveTheme(mode) {
+  try {
+    localStorage.setItem('theme', mode);
+  } catch {
+    // localStorage might be unavailable
+  }
+}
+
 function getColors() {
   return [
     getComputedStyle(document.body).getPropertyValue('--accent1'),
@@ -14,7 +30,7 @@ function getColors() {
 
 function buildChart(multiplier) {
   if (window.eventChart) window.eventChart.destroy();
-  
+
   window.eventChart = new Chart(ctx, {
     type: 'bar',
     data: {
@@ -43,6 +59,10 @@ function buildChart(multiplier) {
 }
 
 // Initial load
+const storedTheme = loadTheme();
+if (storedTheme === 'light') {
+  document.body.classList.add('light');
+}
 buildChart(1);
 
 // Controls
@@ -52,6 +72,7 @@ document.getElementById('timeScale').addEventListener('change', e => {
 
 document.getElementById('toggleTheme').addEventListener('click', () => {
   document.body.classList.toggle('light');
+  saveTheme(document.body.classList.contains('light') ? 'light' : 'default');
   buildChart(parseInt(document.getElementById('timeScale').value, 10));
 });
 
