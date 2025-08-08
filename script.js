@@ -2,13 +2,14 @@ const ctx = document.getElementById('eventChart').getContext('2d');
 let isLog = false;
 
 function getColors() {
+  const style = getComputedStyle(document.body);
   return [
-    getComputedStyle(document.body).getPropertyValue('--accent1'),
-    getComputedStyle(document.body).getPropertyValue('--accent2'),
-    getComputedStyle(document.body).getPropertyValue('--accent3'),
-    getComputedStyle(document.body).getPropertyValue('--accent4'),
-    getComputedStyle(document.body).getPropertyValue('--accent5'),
-    getComputedStyle(document.body).getPropertyValue('--accent6')
+    style.getPropertyValue('--accent1').trim(),
+    style.getPropertyValue('--accent2').trim(),
+    style.getPropertyValue('--accent3').trim(),
+    style.getPropertyValue('--accent4').trim(),
+    style.getPropertyValue('--accent5').trim(),
+    style.getPropertyValue('--accent6').trim()
   ];
 }
 
