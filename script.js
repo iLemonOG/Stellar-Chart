@@ -1,5 +1,6 @@
 const ctx = document.getElementById('eventChart').getContext('2d');
 let isLog = false;
+let eventChart;
 
 function getColors() {
   return [
@@ -13,9 +14,9 @@ function getColors() {
 }
 
 function buildChart(multiplier) {
-  if (window.eventChart) window.eventChart.destroy();
-  
-  window.eventChart = new Chart(ctx, {
+  if (eventChart) eventChart.destroy();
+
+  eventChart = new Chart(ctx, {
     type: 'bar',
     data: {
       labels: eventRates.map(e => e.name),
