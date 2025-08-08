@@ -1,5 +1,5 @@
 // Events per second (baseline)
-const eventRates = [
+export const eventRates = [
   { name: "Star Birth", value: 1.8 },
   { name: "Star Quiet Fade", value: 1.2 },
   { name: "Star Catastrophic Death", value: 0.0001 },
