@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stellar & Planetary Events</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Stellar & Planetary Events</h1>
+    <div class="controls">
+      <select id="timeScale">
+        <option value="1">Per Second</option>
+        <option value="60">Per Minute</option>
+        <option value="3600">Per Hour</option>
+        <option value="86400">Per Day</option>
+      </select>
+      <button id="toggleTheme">Toggle Light/Dark</button>
+      <button id="toggleScale">Toggle Linear/Log</button>
+    </div>
+  </header>
+
+  <main>
+    <canvas id="eventChart"></canvas>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
