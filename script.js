@@ -1,3 +1,4 @@
+import { eventRates } from './data.mjs';
 const ctx = document.getElementById('eventChart').getContext('2d');
 let isLog = false;
 
